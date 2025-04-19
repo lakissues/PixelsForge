@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | PixelsForge</title>
+    <link rel="stylesheet" href="/CSS/payment.css">
+</head>
+<body>
+    <div class="payment-container" style="max-width: 600px; text-align: center;">
+        <header class="payment-header">
+            <h1>Payment Successful!</h1>
+            <p>Your transaction has been completed</p>
+        </header>
+
+        <div class="payment-content" style="grid-template-columns: 1fr; padding: 3rem;">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--success-color)">
+                    <path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                </svg>
+            </div>
+            
+            <div id="transaction-details" style="margin: 2rem 0;">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <a href="/HTML/portfolio.html" class="return-button">Return to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const transactionId = params.get('transaction_id');
+            
+            if (transactionId) {
+                fetch(`/api/transactions/${transactionId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('transaction-details').innerHTML = `
+                            <p><strong>Amount:</strong> $${data.amount.toFixed(2)}</p>
+                            <p><strong>Date:</strong> ${new Date(data.created_at).toLocaleString()}</p>
+                            <p><strong>Transaction ID:</strong> ${transactionId}</p>
+                        `;
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

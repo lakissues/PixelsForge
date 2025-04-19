@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal | PixelsForge</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@500;700&display=swap">
+    <link rel="stylesheet" href="/CSS/jobs.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">PixelsForge</a>
+        </div>
+        
+        <nav class="nav">
+            <a href="portfolio.html">Our Work</a>
+            <a href="jobs.html" class="active">Job Portal</a>
+            <a href="abouts.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            
+            <div class="cta-buttons">
+                <a href="#hire" class="primary-btn">Hire an Editor</a>
+                <a href="#join" class="secondary-btn">Join as Editor</a>
+            </div>
+        </nav>
+        
+        <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <main class="jobs-main">
+        <div class="jobs-container">
+            <h1 class="page-title">Job Portal</h1>
+            
+            <div class="tab-selector">
+                <button class="tab active" data-tab="hire">I'm Hiring an Editor</button>
+                <button class="tab" data-tab="join">I'm an Editor Looking for Work</button>
+            </div>
+            
+            <section id="hire" class="tab-content active">
+                <h2>Post Your Project</h2>
+                <form id="hire-form" class="job-form">
+                    <div class="form-group">
+                        <label for="project-title">Project Title</label>
+                        <input type="text" id="project-title" placeholder="e.g. 'Product Launch Video'" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" required>
+                            <option value="">Select a type</option>
+                            <option>YouTube Video</option>
+                            <option>Social Media Ad</option>
+                            <option>Corporate Video</option>
+                            <option>Short Film</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" required>
+                                <option value="">Select budget</option>
+                                <option>$100 - $500</option>
+                                <option>$500 - $1,000</option>
+                                <option>$1,000 - $2,500</option>
+                                <option>$2,500+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deadline">Deadline</label>
+                            <input type="date" id="deadline" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Style References</label>
+                        <div class="upload-area" id="upload-area">
+                            <span>Drag & drop files or click to browse</span>
+                            <input type="file" id="style-refs" multiple accept="image/*,video/*">
+                        </div>
+                        <div id="file-list" class="file-list"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-details">Project Details</label>
+                        <textarea id="project-details" rows="5" placeholder="Describe your project in detail..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Post Project</button>
+                </form>
+            </section>
+            
+            <section id="join" class="tab-content">
+                <h2>Join Our Editor Network</h2>
+                <form id="editor-form" class="job-form">
+                    <div class="form-group">
+                        <label for="editor-name">Full Name</label>
+                        <input type="text" id="editor-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editor-email">Email</label>
+                        <input type="email" id="editor-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editor-portfolio">Portfolio Link</label>
+                        <input type="url" id="editor-portfolio" placeholder="https://">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Skills & Specialties</label>
+                        <div class="skills-tags" id="skills-tags">
+                            <span class="skill-tag">Premiere Pro <button type="button" class="remove-skill">&times;</button></span>
+                            <span class="skill-tag">After Effects <button type="button" class="remove-skill">&times;</button></span>
+                        </div>
+                        <div class="skill-input">
+                            <input type="text" id="new-skill" placeholder="Add skills">
+                            <button type="button" id="add-skill">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editor-rate">Hourly Rate ($)</label>
+                        <input type="number" id="editor-rate" min="10" step="5" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editor-availability">Availability</label>
+                        <select id="editor-availability" required>
+                            <option value="">Select availability</option>
+                            <option>Full-time</option>
+                            <option>Part-time</option>
+                            <option>Project-based</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Apply to Join</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">PixelsForge</div>
+                <div class="footer-links">
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="jobs.html">Job Portal</a>
+                    <a href="abouts.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                © 2023 PixelsForge. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/jobs.js"></script>
+</body>
+</html>

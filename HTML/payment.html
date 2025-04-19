@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | PixelsForge</title>
+    <link rel="stylesheet" href="/CSS/payment.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="payment-container">
+        <header class="payment-header">
+            <h1>Complete Your Payment</h1>
+            <p>Secure payment processed through Stripe</p>
+        </header>
+
+        <div class="payment-content">
+            <div class="contract-summary">
+                <h2>Contract Details</h2>
+                <div id="contract-details">
+                    <!-- Filled by JavaScript -->
+                </div>
+                <div class="amount-due">
+                    <span>Total Amount:</span>
+                    <span id="payment-amount">$0.00</span>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <h2>Payment Method</h2>
+                <div class="tabs">
+                    <button class="tab active" data-tab="card">Credit/Debit Card</button>
+                    <button class="tab" data-tab="bank">Bank Transfer</button>
+                </div>
+
+                <div class="tab-content active" id="card-tab">
+                    <form id="payment-form">
+                        <div id="card-element" class="card-input"></div>
+                        <div id="card-errors" role="alert"></div>
+                        <button type="submit" id="submit-payment">
+                            <span id="button-text">Pay Now</span>
+                            <div id="spinner" class="hidden"></div>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="bank-tab">
+                    <p>For bank transfers, please contact support@pixelsforge.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-security">
+            <div class="security-badge">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.3V15.8C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                </svg>
+                <span>Secure Payment Processing</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/payment.js"></script>
+</body>
+</html>
